@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLVM Obfuscation Tool - Advanced Code Protection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.svg" alt="LLVM Obfuscator">
+                <span>LLVM Obfuscator</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Live Demo</a></li>
+                <li><a href="#workflow">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download" class="nav-cta">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Advanced LLVM-Based Code Obfuscation</h1>
+                <p class="hero-subtitle">Protect your intellectual property with enterprise-grade obfuscation technology. Make reverse engineering virtually impossible.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToDemo()">
+                        <i class="fas fa-play-circle"></i>
+                        Live Demo
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Download Tool
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Protected Binaries</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.7%</span>
+                        <span class="stat-label">Reverse Engineering Protection</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50ms</span>
+                        <span class="stat-label">Average Processing Time</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-comparison">
+                    <div class="code-window original">
+                        <div class="window-header">
+                            <span class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </span>
+                            <span class="window-title">Original Code</span>
+                        </div>
+                        <pre><code class="language-cpp">void authenticateUser() {
+    string password = getUserInput();
+    if (password == "secret123") {
+        grantAccess();
+    } else {
+        denyAccess();
+    }
+}</code></pre>
+                    </div>
+                    <div class="comparison-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="code-window obfuscated">
+                        <div class="window-header">
+                            <span class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </span>
+                            <span class="window-title">Obfuscated Code</span>
+                        </div>
+                        <pre><code class="language-cpp">void f1() {
+    int a[5] = {0x73,0x65,0x63,0x72,0x65};
+    char b[8]; int c = 0;
+    while(c < 5) {
+        b[c] = a[c] ^ 0x15;
+        c++;
+    }
+    b[5] = '\0';
+    // Obfuscated control flow
+    complexStateMachine();
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Advanced Obfuscation Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Control Flow Flattening</h3>
+                    <p>Transform simple control flow into complex state machines that are extremely difficult to analyze.</p>
+                    <ul class="feature-list">
+                        <li>State machine transformation</li>
+                        <li>Opaque predicates</li>
+                        <li>Function splitting</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>String Encryption</h3>
+                    <p>Encrypt all string literals with runtime decryption to hide sensitive information.</p>
+                    <ul class="feature-list">
+                        <li>XOR encryption with dynamic keys</li>
+                        <li>Custom encryption algorithms</li>
+                        <li>Runtime decryption injection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Bogus Code Injection</h3>
+                    <p>Insert mathematically complex but useless code to confuse reverse engineers.</p>
+                    <ul class="feature-list">
+                        <li>Configurable injection rate</li>
+                        <li>Realistic-looking fake operations</li>
+                        <li>Dynamic code generation</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Fake Look Insertion</h3>
+                    <p>Add deceptive code patterns that appear meaningful but serve no real purpose.</p>
+                    <ul class="feature-list">
+                        <li>Fake API calls</li>
+                        <li>Decoy variables</li>
+                        <li>Misleading comments</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Multi-Cycle Obfuscation</h3>
+                    <p>Apply multiple rounds of obfuscation for maximum protection.</p>
+                    <ul class="feature-list">
+                        <li>Configurable cycles (1-10)</li>
+                        <li>Different techniques per cycle</li>
+                        <li>Progressive complexity</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Comprehensive Reporting</h3>
+                    <p>Detailed reports on obfuscation process and protection metrics.</p>
+                    <ul class="feature-list">
+                        <li>Obfuscation statistics</li>
+                        <li>Security score</li>
+                        <li>Performance impact analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2>Interactive Obfuscation Demo</h2>
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <label for="obfuscation-level">Obfuscation Level</label>
+                        <select id="obfuscation-level" onchange="updateDemo()">
+                            <option value="low">Low Protection</option>
+                            <option value="medium" selected>Medium Protection</option>
+                            <option value="high">High Protection</option>
+                            <option value="ultra">Ultra Protection</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="cycles">Obfuscation Cycles</label>
+                        <input type="range" id="cycles" min="1" max="5" value="2" oninput="updateDemo()">
+                        <span id="cycles-value">2 cycles</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bogus-code">Bogus Code</label>
+                        <input type="range" id="bogus-code" min="0" max="50" value="15" oninput="updateDemo()">
+                        <span id="bogus-value">15%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="string-encryption" checked onchange="updateDemo()">
+                            String Encryption
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="fake-looks" checked onchange="updateDemo()">
+                            Fake Looks
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="runObfuscationDemo()">
+                        <i class="fas fa-bolt"></i>
+                        Run Obfuscation
+                    </button>
+                </div>
+
+                <div class="demo-results">
+                    <div class="result-card">
+                        <h4>Obfuscation Report Preview</h4>
+                        <div class="report-preview">
+                            <div class="report-line">
+                                <span class="report-label">Obfuscation Level:</span>
+                                <span class="report-value" id="report-level">Medium</span>
+                            </div>
+                            <div class="report-line">
+                                <span class="report-label">Cycles Completed:</span>
+                                <span class="report-value" id="report-cycles">2</span>
+                            </div>
+                            <div class="report-line">
+                                <span class="report-label">Bogus Instructions:</span>
+                                <span class="report-value" id="report-bogus">1,247</span>
+                            </div>
+                            <div class="report-line">
+                                <span class="report-label">Encrypted Strings:</span>
+                                <span class="report-value" id="report-strings">45</span>
+                            </div>
+                            <div class="report-line">
+                                <span class="report-label">Fake Looks Inserted:</span>
+                                <span class="report-value" id="report-fakes">8</span>
+                            </div>
+                            <div class="report-line">
+                                <span class="report-label">Security Score:</span>
+                                <span class="report-value" id="report-score">87/100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="performance-metrics">
+                        <h4>Performance Impact</h4>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Binary Size</div>
+                                <div class="metric-value" id="metric-size">+15%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Execution Time</div>
+                                <div class="metric-value" id="metric-time">+8%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Memory Usage</div>
+                                <div class="metric-value" id="metric-memory">+12%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Compile Source Code</h3>
+                        <p>Compile your C/C++ code to LLVM IR using standard compilers</p>
+                        <code>clang -S -emit-llvm program.c -o program.ll</code>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Configure Obfuscation</h3>
+                        <p>Set obfuscation parameters and protection level</p>
+                        <code>./llvm_obfuscator -i program.ll -l high -c 3 -b 20</code>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Apply Transformations</h3>
+                        <p>Tool applies multiple obfuscation passes to the IR</p>
+                        <div class="transformations">
+                            <span class="transformation-tag">Control Flow</span>
+                            <span class="transformation-tag">String Encryption</span>
+                            <span class="transformation-tag">Bogus Code</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Generate Protected Binary</h3>
+                        <p>Compile obfuscated IR to platform-specific binary</p>
+                        <code>llc -filetype=obj protected.ll && clang protected.o -o protected_binary</code>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Generate Report</h3>
+                        <p>Receive detailed obfuscation report and security analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Community</h3>
+                        <div class="price">Free</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Basic obfuscation</li>
+                        <li><i class="fas fa-check"></i> Low protection level</li>
+                        <li><i class="fas fa-check"></i> Single cycle</li>
+                        <li><i class="fas fa-times"></i> String encryption</li>
+                        <li><i class="fas fa-times"></i> Advanced techniques</li>
+                        <li><i class="fas fa-times"></i> Priority support</li>
+                    </ul>
+                    <button class="btn btn-outline">Download Now</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">$99<span>/month</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All obfuscation techniques</li>
+                        <li><i class="fas fa-check"></i> Up to High protection level</li>
+                        <li><i class="fas fa-check"></i> 5 obfuscation cycles</li>
+                        <li><i class="fas fa-check"></i> String encryption</li>
+                        <li><i class="fas fa-check"></i> Detailed reporting</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">Custom</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Ultra protection level</li>
+                        <li><i class="fas fa-check"></i> Unlimited cycles</li>
+                        <li><i class="fas fa-check"></i> Custom obfuscation passes</li>
+                        <li><i class="fas fa-check"></i> White-label solution</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> SLA guarantee</li>
+                    </ul>
+                    <button class="btn btn-outline">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>Ready to Protect Your Code?</h2>
+                <p>Download the LLVM Obfuscation Tool today and secure your intellectual property.</p>
+                <div class="download-options">
+                    <div class="download-option">
+                        <i class="fab fa-windows"></i>
+                        <span>Windows</span>
+                        <small>LLVM-Obfuscator-Windows-x64.exe</small>
+                    </div>
+                    <div class="download-option">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux</span>
+                        <small>llvm-obfuscator-linux-x86_64.tar.gz</small>
+                    </div>
+                    <div class="download-option">
+                        <i class="fab fa-apple"></i>
+                        <span>macOS</span>
+                        <small>LLVM-Obfuscator-macOS-universal.pkg</small>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large">
+                    <i class="fas fa-download"></i>
+                    Download Latest Version (v2.1.0)
+                </button>
+                <div class="download-info">
+                    <span><i class="fas fa-shield-alt"></i> SHA256 Verified</span>
+                    <span><i class="fas fa-file-alt"></i> Documentation</span>
+                    <span><i class="fas fa-users"></i> Community Forum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LLVM Obfuscator</h4>
+                    <p>Advanced code protection through LLVM-based obfuscation technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Issue Tracker</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LLVM Obfuscation Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="demo-animations.js"></script>
+    <script src="parameter-calculator.js"></script>
+</body>
+</html>
